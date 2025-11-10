@@ -135,7 +135,7 @@ body {
   top: -35px;
   left: 50%;
   transform: translateX(-50%) translateY(0);
-  font-size: 26px;
+  font-size: 20px;
   font-family: 'Brush Script MT', cursive;
   font-weight: bold;
   color: #ff4081;
@@ -172,4 +172,5 @@ body {
     .write { font-size: 28px; }
     .button { padding: 10px 20px; font-size: 16px; }
 }
+
 
