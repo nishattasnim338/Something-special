@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Blue Background</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <audio src="Angel’s Dream - Aakash Gandhi.mp3"autoplay loop></audio>
+
+
+  <div class="center-wrapper">
+    <h1>
+      <span>H</span>
+      <span>I</span>
+       <span>!</span>
+    </h1>
+
+    <a href="box to surprice.html"><button class="holo-button">Click here for surprise✨</button></a>
+  </div>
+
+  <script>
+    // Bubble তৈরি করার কোড
+    const numBubbles = 25;
+    for (let i = 0; i < numBubbles; i++) {
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
+
+      const size = Math.random() * 40 + 10;
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+      bubble.style.left = `${Math.random() * 100}%`;
+      bubble.style.animationDuration = `${8 + Math.random() * 5}s`;
+      bubble.style.animationDelay = `${Math.random() * 5}s`;
+
+      document.body.appendChild(bubble);
+    }
+  </script>
+</body>
+</html>

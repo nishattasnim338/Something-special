@@ -1,0 +1,135 @@
+/* ========= Base background ========== */
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(270deg, #a8d8ff, #66b3ff, #99ccff);
+  background-size: 600% 600%;
+  animation: gradientShift 12s ease infinite;
+  position: relative;
+  flex-direction: column;
+}
+
+/* ========= Center container ========== */
+.center-wrapper {
+  text-align: center;
+  z-index: 2; /* bubbles এর নিচে না যায় */
+}
+
+/* ========= Gradient animation ========== */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ========= Bubble Animation ========== */
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  animation: rise 10s linear infinite;
+  box-shadow: 0 0 10px rgba(255,255,255,0.4);
+  z-index: 1;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* ========= Animated Text ========= */
+span {
+  font-size: 100px;
+  color: #fff;
+  font-family: 'Arial';
+  text-transform: uppercase;
+  display: inline-block;
+  animation: bounce 0.4s ease infinite alternate;
+  position: relative;
+}
+
+h1 span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+@keyframes bounce {
+  100% {
+    top: -20px; 
+    text-shadow: 0 1px 0 #ccc,
+                 0 2px 0 #ccc,
+                 0 3px 0 #ccc,
+                 0 4px 0 #ccc,
+                 0 5px 0 #ccc,
+                 0 6px 0 #ccc,
+                 0 7px 0 #ccc,
+                 0 8px 0 #ccc;
+  }
+}
+
+/* ========= Holographic Button ========= */
+.holo-button {
+  padding: 15px 50px;
+  font-size: 20px;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border: 2px solid #4cffdf;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  margin-top: 30px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.holo-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(76, 255, 223, 0.8), 0 10px 50px rgba(76, 255, 223, 0.6);
+}
+
+.holo-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  border-radius: 50%;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+@media (max-width: 600px) {
+  span {
+    font-size: 60px;
+  }
+
+  .holo-button {
+    padding: 12px 25px;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0.1;
+  }
+}

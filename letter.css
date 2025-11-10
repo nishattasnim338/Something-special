@@ -1,0 +1,96 @@
+  body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: #ffe4e1; /* Soft love-ish minimal pink */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bubble {
+    position: absolute;
+    bottom: -50px;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 105, 180, 0.7); /* hotpink-ish */
+    border-radius: 50%;
+    animation: float 6s infinite ease-in;
+  }
+
+  .bubble:nth-child(2) {
+    width: 30px;
+    height: 30px;
+    left: 20%;
+    animation-duration: 8s;
+  }
+
+  .bubble:nth-child(3) {
+    width: 15px;
+    height: 15px;
+    left: 40%;
+    animation-duration: 5s;
+  }
+
+  .bubble:nth-child(4) {
+    width: 25px;
+    height: 25px;
+    left: 60%;
+    animation-duration: 7s;
+  }
+
+  .bubble:nth-child(5) {
+    width: 18px;
+    height: 18px;
+    left: 80%;
+    animation-duration: 6.5s;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0) translateX(0) scale(1);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateY(-50vh) translateX(20px) scale(1.1);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(-100vh) translateX(-20px) scale(1);
+      opacity: 0;
+    }
+  }
+
+   /* Vintage Letter Box */
+  .letter {
+    width: 70%;
+    max-width: 800px;
+    height: 70%;
+    background: #fff1e6;
+    border: 3px solid #d4a373;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    overflow-y: auto;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .letter h1 {
+    text-align: center;
+    font-size: 1.5em;
+    color: #d94f6b;
+    margin-bottom: 20px;
+    font-family: 'Lucida Handwriting', cursive;
+  }
+
+  .letter p {
+    font-size: 1em;
+    line-height: 1.8em;
+    color: #6b4f4f;
+    text-align: center;
+    font-family: 'Segoe Script', 'Lucida Handwriting', cursive;
+  }
